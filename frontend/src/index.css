@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+      --text-colour: 24, 24, 27; /*zinc-900 */
+      --hover-colour: 99, 102, 241; /* indigo-500 */
+      --color-secondary: 111, 114, 185;
+      --card-text-colour: 148, 163, 184; /*slate-400 */
+      --card-bg-colour: 15, 23, 42; /* slate-900 */
+      /* ... */
+    }
+    .dark {
+        --text-colour: 156, 163, 175; /* gray-400 */
+        --card-bg-colour: 209, 213, 219; /* gray-300 */
+        --card-text-colour: 15, 23, 42; /* slate-900 */
+    }
+  }
