@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react"
 import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import SearchPage from './pages/Search';
@@ -8,6 +9,7 @@ function App() {
 
   return (
    <>
+      <Analytics />
       <Navbar />
       <Routes>
         <Route path='/' element={<Home />} />
