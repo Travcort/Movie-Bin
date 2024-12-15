@@ -1,16 +1,6 @@
 {
     "version": 2,
     "buildCommand": "sh vercel.sh",
-    "builds": [
-    {
-      "src": "./backend/index.js",
-      "use": "@vercel/node"
-    },
-    {
-      "src": "./frontend/dist",
-      "use": "@vercel/static"
-    }
-  ],
     "rewrites": [
         { 
           "source": "/(.*)", 
