@@ -28,3 +28,5 @@ if (process.env.NODE_ENV === "development") {
         console.log(`Server started on http://localhost:${PORT}`);
     })
 }
+
+module.exports = app;
