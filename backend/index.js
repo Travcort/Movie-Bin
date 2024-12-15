@@ -5,12 +5,11 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 const path = require('path');
-// const __dirname = path.resolve();
 
 const { search } = require('./Data');
 
 // Environment Variables
-const PORT = process.env.PORT;
+const PORT = process.env.SERVER_PORT;
 
 app.use('/api', search);
 
@@ -24,8 +23,6 @@ if (process.env.NODE_ENV === "production") {
     });
 }
 
-if (process.env.NODE_ENV === "development") {
-    app.listen(PORT, () => {
-        console.log(`Server started on http://localhost:${PORT}`);
-    })
-}
+app.listen(PORT, () => {
+    console.log(`Server started on http://localhost:${PORT}`);
+})
