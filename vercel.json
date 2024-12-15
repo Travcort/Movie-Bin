@@ -1,7 +1,7 @@
 {
     "version": 2,
     "buildCommand": "sh vercel.sh",
-    "routes": [
+    "rewrites": [
         { 
           "src": "/(.*)", 
           "dest": "backend/index.js" 
