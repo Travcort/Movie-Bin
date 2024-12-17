@@ -1,14 +1,8 @@
 const express = require('express');
-const app = express();
-app.use(express.json());
-const dotenv = require('dotenv');
-dotenv.config();
+const router = express.Router();
+const { baseUrl, key } = require('./utils/config.js');
 
-// Environment Variables
-const baseUrl = process.env.URL
-const key = process.env.OMDB
-
-const search = app.get('/:title' , async (req,res) => {
+router.get('/:title' , async (req,res) => {
     try {
         const title = req.params.title
         const response = await fetch(`${baseUrl}?t=${title}&apikey=${key}`)
@@ -20,5 +14,4 @@ const search = app.get('/:title' , async (req,res) => {
     }
 })
 
-
-module.exports = {search}
+module.exports = router;

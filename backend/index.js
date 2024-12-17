@@ -1,17 +1,14 @@
 const express = require('express');
 const app = express();
 app.use(express.json());
-const dotenv = require('dotenv');
-dotenv.config();
-
 const path = require('path');
 
-const { search } = require('./Data');
+const searchRoute = require('./Data.js');
 
 // Environment Variables
-const PORT = process.env.SERVER_PORT;
+const { PORT } = require('./utils/config.js');
 
-app.use('/api', search);
+app.use('/api', searchRoute);
 
 if (process.env.NODE_ENV === "production") {
     // Serve static files from the frontend build
@@ -29,4 +26,7 @@ if (process.env.NODE_ENV === "development") {
     app.listen(PORT, () => {
         console.log(`Server started on http://localhost:${PORT}`);
     })
+
+    // Serve static files from the frontend build
+    app.use(express.static(path.join(__dirname, '../frontend/dist')));
 }
