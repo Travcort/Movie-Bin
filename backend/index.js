@@ -22,11 +22,6 @@ if (process.env.NODE_ENV === "production") {
     // module.exports = app;
 }
 
-if (process.env.NODE_ENV === "development") {
-    app.listen(PORT, () => {
-        console.log(`Server started on http://localhost:${PORT}`);
-    })
-
-    // Serve static files from the frontend build
-    app.use(express.static(path.join(__dirname, '../frontend/dist')));
-}
+app.listen(PORT, () => {
+    console.log(`Server started on http://localhost:${PORT}`);
+})
