@@ -1,6 +1,7 @@
 {
     "version": 2,
     "buildCommand": "sh vercel.sh",
+    "outputDirectory": "frontend/dist",
     "rewrites": [
         { 
           "source": "/(.*)", 
