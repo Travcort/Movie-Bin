@@ -19,9 +19,14 @@ if (process.env.NODE_ENV === "production") {
         res.sendFile(path.resolve(__dirname, '../frontend', 'dist', 'index.html'));
     });
 
-    // module.exports = app;
+    module.exports = app;
 }
 
-app.listen(PORT, () => {
-    console.log(`Server started on http://localhost:${PORT}`);
-})
+if (process.env.NODE_ENV === "development") {
+    app.listen(PORT, () => {
+        console.log(`Server started on http://localhost:${PORT}`);
+    })
+
+    // Serve static files from the frontend build
+    app.use(express.static(path.join(__dirname, '../frontend/dist')));
+}
