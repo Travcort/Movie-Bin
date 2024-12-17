@@ -2,15 +2,10 @@
     "version": 2,
     "buildCommand": "sh vercel.sh",
     "outputDirectory": "frontend/dist",
-    "functions": {
-      "backend/index.js": {
-        "runtime": "nodejs20.x"
-      }
-    },
     "rewrites": [
         { 
           "source": "/(.*)", 
-          "destination": "/backend/index.js" 
+          "destination": "/api/index.js" 
         }
       ]
 }

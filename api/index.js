@@ -18,7 +18,8 @@ if (process.env.NODE_ENV === "production") {
     app.get('/*', (req, res) => {
         res.sendFile(path.resolve(__dirname, '../frontend', 'dist', 'index.html'));
     });
-
+   
+    // Cater for Serverless 
     module.exports = app;
 }
 
@@ -27,6 +28,6 @@ if (process.env.NODE_ENV === "development") {
         console.log(`Server started on http://localhost:${PORT}`);
     })
 
-    // Serve static files from the frontend build
+    // Convenience and mimicking prod
     app.use(express.static(path.join(__dirname, '../frontend/dist')));
 }

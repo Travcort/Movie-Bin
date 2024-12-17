@@ -7,8 +7,7 @@ set -e
 echo "Installing Project Dependencies for the backend..."
 npm install
 
-
-if [ -d 'frontend' ]; then
+if [[ -d 'frontend' ]]; then
     # Installing Project Dependecies for the Frontend
     echo "Installing Project Dependencies for the frontend..."
     npm install --prefix frontend
@@ -21,7 +20,7 @@ else
 fi
 
 # Starting the Server
-echo "Running the Server..."
+echo "Starting the application..."
 npm start
 
 echo "Build Completed!"
