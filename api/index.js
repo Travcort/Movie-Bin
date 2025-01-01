@@ -27,7 +27,4 @@ if (process.env.NODE_ENV === "development") {
     app.listen(PORT, () => {
         console.log(`Server started on http://localhost:${PORT}`);
     })
-
-    // Convenience and mimicking prod
-    app.use(express.static(path.join(__dirname, '../frontend/dist')));
 }

@@ -49,8 +49,8 @@ const SearchPage = () => {
             {
                 movieData && 
                 movieData.Response === "True"
-                ? (<MovieCard Title={movieData.Title} Year={movieData.Year} Runtime={movieData.Runtime} Rated={movieData.Rated}
-                Director={movieData.Director} Genre={movieData.Genre} Plot={movieData.Plot} Poster={movieData.Poster} 
+                ? (<MovieCard Title={movieData.Title} Released={movieData.Released} Type={movieData.Type} Seasons={movieData?.totalSeasons} Runtime={movieData.Runtime} Rated={movieData.Rated}
+                Director={movieData.Director} Writer={movieData.Writer} Genre={movieData.Genre} Awards={movieData.Awards} Plot={movieData.Plot} Poster={movieData.Poster} 
                 IMDB={movieData.imdbRating} RottenTomatoes={movieData.Ratings[1]?.Value || "N/A"} Metacritic={movieData.Metascore} />)
                 : (<Missing error={errorMessage} />)
             }

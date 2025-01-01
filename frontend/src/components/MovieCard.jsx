@@ -1,13 +1,13 @@
 import starSVG from '/star.svg';
 
-const MovieCard = ({ Title, Year, Runtime, Rated, Director, Genre, Poster, IMDB, RottenTomatoes, Metacritic, Plot }) => {
+const MovieCard = ({ Title, Released, Type, Seasons, Runtime, Rated, Director, Writer, Genre, Awards, Poster, IMDB, RottenTomatoes, Metacritic, Plot }) => {
     return (
         <div className="bg-[rgb(var(--card-bg-colour))] text-[rgb(var(--card-text-colour))] grid rounded-3xl max-w-[360px] shadow-sm m-auto flex-col">
             <img
                 src={Poster}
                 width="360"
                 height="200"
-                className="rounded-t-3xl justify-center h-80 grid object-contain"
+                className="rounded-t-3xl justify-center h-80 grid object-contain pt-4"
                 alt={Title}
                 /> 
             <div className="group p-5 grid z-10">
@@ -16,9 +16,9 @@ const MovieCard = ({ Title, Year, Runtime, Rated, Director, Genre, Poster, IMDB,
                 </a>
                 <div className="flex group justify-between">
                     <div className="font-black flex flex-col">
-                        <span className="text-red-500">Year</span>
+                        <span className="text-red-500">Released</span>
                         <span className="pt-2 font-semibold">
-                            {Year}
+                            {Released}
                         </span>
                     </div>
                     <div className="font-black flex flex-col">
@@ -33,16 +33,56 @@ const MovieCard = ({ Title, Year, Runtime, Rated, Director, Genre, Poster, IMDB,
                             {Rated}
                         </span>
                     </div>
-                    <div className="font-black flex flex-col">
-                        <span className="text-red-500 ">Director</span>
-                        <span className="pt-2 font-semibold">
-                            {Director}
-                        </span>
-                    </div>
                 </div>
-                <span className=" pt-2 font-semibold">
-                    {Genre}
-                </span>
+
+                {
+                    Type && Type === "series"
+                    ?(<div className='flex gap-4 pt-2'>
+                        <div className="font-black flex gap-2">
+                            <span className="text-red-500 ">Type:</span>
+                            <span className="font-semibold">
+                                {Type} 
+                            </span>
+                        </div>
+                        <div className="font-black flex gap-2">
+                            <span className="text-red-500 ">Seasons:</span>
+                            <span className="font-semibold">
+                                {Seasons} 
+                            </span>
+                        </div>
+                    </div>)
+                    :(<div className="font-black flex pt-2 gap-2    ">
+                        <span className="text-red-500 ">Type</span>
+                        <span className="font-semibold">
+                            {Type} 
+                        </span>
+                    </div>)
+                }
+
+                <div className="font-black flex gap-2 pt-2">
+                    <span className="text-red-500 ">Genre:</span>
+                    <span className="font-semibold">
+                        {Genre} 
+                    </span>
+                </div>
+                <div className="font-black flex gap-2 pt-2">
+                    <span className="text-red-500 ">Director:</span>
+                    <span className="font-semibold">
+                        {Director} 
+                    </span>
+                </div>
+                <div className="font-black flex gap-2 pt-2">
+                    <span className="text-red-500 ">Writer:</span>
+                    <span className="font-semibold">
+                        {Writer} 
+                    </span>
+                </div>
+                <div className="font-black flex gap-2 pt-2">
+                    <span className="text-red-500 ">Awards:</span>
+                    <span className="font-semibold">
+                        {Awards} 
+                    </span>
+                </div>
                 <div className="h-20">
                     <span className="line-clamp-3 py-2 h-20 leading-6 text-sm font-light leading-relaxed">
                         {Plot}
